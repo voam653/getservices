@@ -1,5 +1,5 @@
 const api = require('../api');
 
-export const routes = (app) => {
-    // routes
+module.exports = (app) => {
+    app.route('/services/fields').get(api.getServiceFields);
 };
