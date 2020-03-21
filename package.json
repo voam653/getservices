@@ -1,0 +1,35 @@
+{
+  "name": "getservices",
+  "version": "1.0.0",
+  "description": "An application to search, request and get services",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp sassCompile fontsCompile",
+    "server": "node ./server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "services"
+  ],
+  "author": "Vinicius Moreno",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "eslint": "^6.0.1",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-debug": "^4.0.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "jshint": "^2.10.2",
+    "map-stream": "0.0.7"
+  },
+  "dependencies": {
+    "express": "^4.12.3",
+    "body-parser": "^1.15.1"
+  }
+}
