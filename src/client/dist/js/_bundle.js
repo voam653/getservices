@@ -1,0 +1,1 @@
+class ServiceFields{constructor(s=[],e=[]){this._userFields=s,this._requestFields=e}get userFields(){return[].concat(this._userFields)}get requestFields(){return[].concat(this._requestFields)}addFields(s,e){this.setUserFields(s),this.setRequestFields(e)}addUserFields(s){this._userFields.push(s)}addRequestFields(s){this._requestFields.push(s)}}

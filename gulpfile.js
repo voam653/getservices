@@ -1,11 +1,10 @@
 const { src, dest, watch, series } = require('gulp');
 const debug = require('gulp-debug');
 const sass = require('gulp-sass');
-const jshint = require('gulp-jshint');
+const uglify = require('gulp-terser');
 const concat = require('gulp-concat');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
-const map = require('map-stream');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').create();
 
@@ -15,13 +14,6 @@ const plumberErrorHandler = {
     message: 'Compile error: <%= error.message %>'
   })
 };
-
-const exitOnJshintError = map(function(file, callback) {
-  if (!file.jshint.success) {
-    console.error('jshint failed');
-    process.exit(1);
-  }
-});
 
 function server() {
   browserSync.init({
@@ -40,11 +32,9 @@ function sassCompile() {
 }
 
 function jsCompile() {
-  return src('./src/client/views/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('fail'))
-    .pipe(exitOnJshintError)
+  return src('./src/client/app/**/*.js')
     .pipe(concat('_bundle.js'))
+    .pipe(uglify())
     .pipe(dest('./src/client/dist/js'));
 }
 
