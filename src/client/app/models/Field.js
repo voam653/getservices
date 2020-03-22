@@ -15,7 +15,7 @@ class Field {
         this._mask = mask;
         this._type = type;
         this._required = required;
-        this._values = values;
+        this._values = values ? (new Values(values)).values : values;
     };
 
     get name() {
@@ -43,6 +43,6 @@ class Field {
     };
 
     get values() {
-        return this._values ? (new Values(this._values)).values : this._values;
+        return this._values;
     };
 };

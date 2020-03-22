@@ -4,11 +4,30 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>GetServices</title>
+    <meta name="theme-color" content="#FFE953">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="./dist/css/styles.css" />
     <script src="./dist/js/_bundle.js"></script>
 </head>
 <body>
-    Hello Service
+    <header class="gs-header">
+        <span class="gs-header__logo"> GetServices </span>
+    </header>
+
+    <section class="gs-main">
+        <form class="gs-main__form gs-main__form--services" onsubmit="serviceFieldsController.setServices(event)">
+            Services
+            <button class="gs-button" type="submit"> Próximo </button>
+        </form>
+
+        <form class="gs-main__form gs-main__form--user" onsubmit="serviceFieldsController.confirmServices(event)">
+            Users
+
+            <button class="gs-button" type="button" onclick="serviceFieldsController.backToServices(event)">
+                Voltar
+            </button>
+            <button class="gs-button" type="submit"> Buscar por especialista </button>
+        </form>
+    </section>
 </body>
 </html>

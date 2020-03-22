@@ -4,21 +4,15 @@ class FieldsService {
         this._http = new HttpService();
     };
 
-    getServiceFields() {
-        return this._http
-            .get('services/fields')
-            .then(serviceFields => {
-                console.log(serviceFields);
-                return this._checkValidServiceFields(serviceFields) ?
-                    new ServiceFields(
-                        serviceFields._embedded.user_fields,
-                        serviceFields._embedded.request_fields,
-                    ) : null;
-            })
-            .catch(erro => {
-                console.log(erro);
-                throw new Error('An error occurred while trying to get the service fields');
-            });
+    async getServiceFields() {
+        const serviceFields = await this._http
+            .get(process.env.GET_SERVICES__BASE_URL + process.env.GET_SERVICES__SERVICE_FIELDS);
+
+        return this._checkValidServiceFields(serviceFields) ?
+            new ServiceFields(
+                serviceFields._embedded.user_fields,
+                serviceFields._embedded.request_fields,
+            ) : null;
     };
 
     _checkValidServiceFields(serviceFields) {
@@ -30,5 +24,5 @@ class FieldsService {
             serviceFields._embedded.request_fields.length &&
             serviceFields._embedded.user_fields.length
         );
-    }
+    };
 };

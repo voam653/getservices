@@ -32,10 +32,11 @@ function sassCompile() {
 }
 
 function jsCompile() {
-  return src('./src/client/app/**/*.js')
+  return src(['./src/client/app/**/*.js', './src/client/*.js'])
     .pipe(concat('_bundle.js'))
     .pipe(uglify())
-    .pipe(dest('./src/client/dist/js'));
+    .pipe(dest('./src/client/dist/js'))
+    .pipe(debug({ title: 'JS compiled:' }));
 }
 
 function fontsCompile() {
