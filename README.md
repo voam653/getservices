@@ -27,7 +27,7 @@ O servidor vai subir na porta 8080, para isso, você pode acessar [http://localh
 
 ## Tests
 
-Infelizmente, me perdi ao configurar os testes para esse projeto, mas caso queiram ver um projeto que desenvolvi recentemente com testes, segue o [Projeto: NorrisJokes](https://github.com/gulpjs/gulp)
+Infelizmente, me perdi ao configurar os testes para esse projeto, mas caso queiram ver um projeto que desenvolvi recentemente com testes, segue o [Projeto: NorrisJokes](https://github.com/gulpjs/gulp) - projeto feito em ReactJs com 100% de cobertura de testes com Jest e Enzyme.
 
 ***Se tiverem algum problema é só mandar um email para: voam653@gmail.com***
 ***Espero que tenham gostado e aguardo retorno :)***
