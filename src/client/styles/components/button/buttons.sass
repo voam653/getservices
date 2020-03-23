@@ -2,7 +2,7 @@
     padding: 12px 24px
     @extend %button
     @include button-constructor($default-color, $default-color--dark)
-    transition: all .2s ease-out
+    transition: all .3s ease
 
     &, *
         color: $white-color
@@ -29,15 +29,16 @@
             color: $yellow--dark
 
     &--outline
-        @include button-constructor(transparent, $default-color)
-        border: $default-color
+        @include button-constructor(transparent, $default-color--light)
+        border: $border
+        border-color: $default-color
 
         &, *
-            color: $text-color
+            color: $default-color
 
         &:hover, &:visited, &:active
             &, *
-                color: $text-color
+                color: $white-color
 
     &--basic
         @include button-constructor(transparent, transparent)

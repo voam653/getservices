@@ -17,7 +17,7 @@ class FieldsView extends View {
                 <input
                     ${required ? `required` : ``}
                     class="gs-text-field"
-                    type="${type === 'email' ? type : `text`}"
+                    type="${type}"
                     placeholder="${placeholder ? placeholder : ''}"
                     name="${name}"
                 />
@@ -50,7 +50,7 @@ class FieldsView extends View {
                 }
 
                 ${field.required ? `
-                    <span class="gs-message gs-message--warning"> Este campo é requerido! </span>
+                    <span class="gs-message gs-message--warning"> Campo inválido! </span>
                 ` : ``}
             </li>
         `);

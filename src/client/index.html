@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -9,81 +10,98 @@
     <link rel="stylesheet" href="./dist/css/styles.css" />
     <script src="./dist/js/_bundle.js"></script>
 </head>
+
 <body>
     <header class="gs-header">
         <span class="gs-header__logo"> GetServices </span>
     </header>
 
     <section class="gs-main">
-        <form id="formServices" class="gs-main__form gs-main__form--services gs-card gs-card--x-large" onsubmit="serviceFieldsController.setServices(event)">
-            <div class="gs-form-header">
-                <hgroup class="gs-form-header__content">
-                    <h1 class="gs-title gs-card__title">
-                        Temos o
-                        <strong class="gs-title__strong"> especialista perfeito</strong>
-                        para você!
-                    </h1>
-                    <h2 class="gs-sub-title gs-card__sub-title">
-                        Orçamento grátis, online!
-                    </h2>
-                </hgroup>
-            </div>
+        <div class="gs-progressive-box">
+            <form id="formServices" class="gs-main__form gs-main__form--services gs-card gs-card--x-large">
+                <div class="gs-form-header">
+                    <hgroup class="gs-form-header__content">
+                        <h1 class="gs-title gs-card__title">
+                            Temos o
+                            <strong class="gs-title__strong"> especialista perfeito</strong>
+                            para você!
+                        </h1>
+                        <h2 class="gs-sub-title gs-card__sub-title">
+                            Orçamento grátis, online!
+                        </h2>
+                    </hgroup>
+                </div>
 
-            <div id="contentServices" class="gs-form-body"></div>
+                <div id="contentServices" class="gs-form-body"></div>
 
-            <div class="gs-form-footer">
-                <button class="gs-button" type="submit"> Avançar </button>
-            </div>
-        </form>
+                <div class="gs-form-footer">
+                    <button
+                        class="gs-button"
+                        type="button"
+                        onclick="serviceFieldsController.setServices(event)"
+                    >
+                        Avançar
+                    </buttonclass="gs-button">
+                </div>
+            </form>
 
-        <form id="formUser" class="gs-main__form gs-main__form--user gs-card gs-card--x-large" onsubmit="serviceFieldsController.confirmServices(event)">
-            <div class="gs-form-header">
-                <hgroup class="gs-form-header__content">
-                    <h1 class="gs-title gs-card__title">
-                        Estamos quase lá
-                    </h1>
-                    <h2 class="gs-sub-title gs-card__sub-title">
-                        Finalize seu registro para a gente te contatar!
-                    </h2>
-                </hgroup>
-            </div>
+            <form id="formUser" class="gs-main__form gs-main__form--user gs-card gs-card--x-large">
+                <div class="gs-form-header">
+                    <hgroup class="gs-form-header__content">
+                        <h1 class="gs-title gs-card__title">
+                            Estamos quase lá
+                        </h1>
+                        <h2 class="gs-sub-title gs-card__sub-title">
+                            Informe os seguintes dados para finalizar o pedido:
+                        </h2>
+                    </hgroup>
+                </div>
 
-            <div id="contentUser" class="gs-form-body"></div>
+                <div id="contentUser" class="gs-form-body"></div>
 
-            <div class="gs-form-footer">
-                <button class="gs-button" type="button" onclick="serviceFieldsController.backToServices(event)">
-                    Voltar
-                </button>
-                <button class="gs-button" type="submit"> Buscar por especialista </button>
-            </div>
-        </form>
+                <div class="gs-form-footer">
+                    <button class="gs-button gs-button--outline" type="button" onclick="serviceFieldsController.backToServices()">
+                        Voltar
+                    </button>
+                    <button
+                        class="gs-button gs-button--confirm"
+                        type="button" onclick="serviceFieldsController.confirmServices(event)"
+                    >
+                        Buscar por especialista
+                    </buttonclass="gs-button>
+                </div>
+            </form>
 
-        <form id="formSuccess" class="gs-main__form gs-main__form--success gs-card gs-card--x-large">
-            <div class="gs-form-header">
-                <hgroup class="gs-form-header__content">
-                    <h1 class="gs-title gs-card__title">
-                        Pedido de serviço realizado com
-                        <strong class="gs-title__strong"> sucesso! </strong>
-                    </h1>
-                    <h2 class="gs-sub-title gs-card__sub-title">
-                        Obrigado por realizado o pedido conosco
-                    </h2>
-                </hgroup>
-            </div>
+            <form id="formSuccess" class="gs-main__form gs-main__form--success gs-card gs-card--x-large">
+                <div class="gs-form-header">
+                    <hgroup class="gs-form-header__content">
+                        <h1 class="gs-title gs-card__title">
+                            Pedido de serviço realizado com
+                            <strong class="gs-title__strong"> sucesso! </strong>
+                        </h1>
+                        <h2 class="gs-sub-title gs-card__sub-title">
+                            Obrigado por realizar o pedido conosco!
+                        </h2>
+                    </hgroup>
+                </div>
 
-            <div class="gs-form-body">
-                <span class="gs-description">
-                    <img class="gs-check-image" src="https://bit.ly/3aa07lC" alt="success" />
-                    Em breve entraremos em contato contigo para intermediar seu pedido junto aos nossos especialistas
-                </span>
-            </div>
+                <div class="gs-form-body">
+                    <img class="gs-check-image" src="https://bit.ly/2UaU0HW" alt="success" />
+                    <span class="gs-description">
+                        Não se preocupe que iremos cuidar de tudo para você a partir de agora.
+                        Em breve entraremos em contato contigo por e-mail para realizar a intermediação
+                        do seu pedido junto aos nossos especialistas.
+                    </span>
+                </div>
 
-            <div class="gs-form-footer">
-                <button class="gs-button" type="button" onclick="serviceFieldsController.backToServices(event)">
-                    Realizar um novo pedido
-                </button>
-            </div>
-        </form>
+                <div class="gs-form-footer">
+                    <button class="gs-button" type="button" onclick="serviceFieldsController.remakeOrder()">
+                        Realizar um novo pedido
+                    </button>
+                </div>
+            </form>
+        </div>
     </section>
 </body>
+
 </html>

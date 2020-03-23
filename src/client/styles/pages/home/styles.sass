@@ -18,20 +18,34 @@
         color: $text-color
 
 .gs-main
-    margin: auto
     width: 100%
-    height: calc(100vh - 64px)
     position: relative
     overflow: hidden
+
+    .gs-progressive-box
+        display: flex
+        align-items: flex-start
+        justify-content: space-around
+        padding-top: $spacing-64
+        width: 300vw
+        transform: translateX(100vw)
+        transition: $transition
+
+        &.is-services-visible
+            transform: translateX(0vw)
+
+        &.is-user-visible
+            transform: translateX(-100vw)
+
+        &.is-success-visible
+            transform: translateX(-200vw)
 
     &__form
         max-width: $spacing-vw
         width: $max-content-block
         transition: all 0.5s ease
-        position: absolute
+        position: relative
         overflow: hidden
-        top: 64px
-        margin: auto
 
         .gs-form-header
             width: 100%
@@ -61,17 +75,59 @@
                     margin-left: $spacing-8
 
         &--services
-            left: -100%
-            right: 100%
-
             .gs-form-footer
                 .gs-button
                     margin-left: auto
 
-        &--user, &--success
-            left: 100%
-            right: 0
+        &--success
+            .gs-form-header
+                .gs-title__strong
+                    color: $green--light
 
-        &.is-visible
-            left: 0
-            right: 0
+            .gs-form-body
+                display: flex
+
+                .gs-check-image
+                    width: 160px
+
+                .gs-description
+                    padding: $spacing-16
+                    font-size: $font-size-20
+                    line-height: $line-height
+                    text-align: justify
+
+            .gs-form-footer
+                    .gs-button
+                        margin-left: auto
+                        margin-right: auto
+
+@media(max-width: 720px)
+    .gs-main
+        .gs-progressive-box
+            padding-top: 0px
+
+        &__form
+            width: 100vw
+            min-height: calc(100vh - 64px)
+            border-radius: 0px
+            box-shadow: none
+
+            .gs-form-footer
+                margin-top: auto
+
+            &--success
+                .gs-form-body
+                    flex-flow: column
+                    align-items: center
+
+@media(max-width: 540px)
+    .gs-main
+        .gs-progressive-box
+        &__form
+            .gs-form-footer
+                flex-flow: column
+
+                .gs-button
+                    margin-left: 0px
+                    margin-right: 0px
+                    width: 100%
