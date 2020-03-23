@@ -1,0 +1,37 @@
+.gs-card
+    display: flex
+    flex-flow: column
+    align-items: flex-start
+    background-color: $white-color
+    border-radius: $border-radius
+    box-shadow: $box-shadow
+    padding: $spacing-24
+    position: relative
+
+    &__title, &__sub-title
+        width: 100%
+        font-size: $title
+        font-weight: $title-weight
+        color: $text-color
+        text-align: center
+        margin: 0 0 $spacing-8
+
+    &__sub-title
+        font-size: $title-sm
+        font-weight: $text-weight
+        margin: 0 0 $spacing-16
+
+    &--x-small
+        padding: $spacing-8
+
+    &--small
+        padding: $spacing-16
+
+    &--large
+        padding: $spacing-32
+
+    &--x-large
+        padding: $spacing-40
+
+    &--xx-large
+        padding: $spacing-64

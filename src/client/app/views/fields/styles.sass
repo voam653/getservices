@@ -1,0 +1,30 @@
+.gs-list-fields
+    margin: 0px
+    padding: 0px
+    list-style: none
+
+    &__item
+        display: flex
+        flex-flow: column
+        justify-content: flex-start
+        align-items: flex-start
+
+        &:not(:last-child)
+            margin-bottom: $spacing-32
+
+        .gs-label
+            margin-bottom: $spacing-8
+
+            .gs-strong
+                color: $red--dark
+                font-weight: $font-weight--semibold
+
+        .gs-message
+            font-size: 0px
+            color: $error-color--dark
+            font-weight: $font-weight--semibold
+            transition: $transition
+
+            &.is-visible
+                margin-top: $spacing-8
+                font-size: $text-xs

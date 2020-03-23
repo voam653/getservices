@@ -1,0 +1,77 @@
+.gs-header
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: $background-default-color
+    border-bottom: $border-yellow
+    height: $spacing-64
+    min-height: $spacing-64
+    width: 100%
+    left: 0px
+    top: 0px
+    position: sticky
+    z-index: 4
+
+    &__logo
+        font-size: $title-xl
+        font-weight: $font-weight--bold
+        color: $text-color
+
+.gs-main
+    margin: auto
+    width: 100%
+    height: calc(100vh - 64px)
+    position: relative
+    overflow: hidden
+
+    &__form
+        max-width: $spacing-vw
+        width: $max-content-block
+        transition: all 0.5s ease
+        position: absolute
+        overflow: hidden
+        top: 64px
+        margin: auto
+
+        .gs-form-header
+            width: 100%
+
+            &__content
+                margin-bottom: $spacing-32
+
+                .gs-title__strong
+                    font-weight: $font-weight--bold
+                    color: $yellow--dark
+
+        .gs-form-body
+            width: 100%
+
+        .gs-form-footer
+            display: flex
+            align-items: center
+            justify-content: space-between
+            flex-wrap: wrap
+            margin-top: $spacing-16
+            width: 100%
+
+            .gs-button
+                margin-top: $spacing-16
+
+                &:nth-child(2)
+                    margin-left: $spacing-8
+
+        &--services
+            left: -100%
+            right: 100%
+
+            .gs-form-footer
+                .gs-button
+                    margin-left: auto
+
+        &--user, &--success
+            left: 100%
+            right: 0
+
+        &.is-visible
+            left: 0
+            right: 0

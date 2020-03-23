@@ -1,0 +1,87 @@
+.gs-button
+    padding: 12px 24px
+    @extend %button
+    @include button-constructor($default-color, $default-color--dark)
+    transition: all .2s ease-out
+
+    &, *
+        color: $white-color
+        font-size: $text
+        font-weight: $text-weight
+
+    .text
+        margin: 0
+
+    &:hover, &:visited, &:active
+        &, *
+            color: $white-color
+
+    &--confirm
+        @include button-constructor($green, $green--dark)
+
+    &--cancel
+        @include button-constructor($error-color, $error-color--dark)
+
+    &--transparent
+        @include button-constructor(transparent, $default-color)
+
+        &, *
+            color: $yellow--dark
+
+    &--outline
+        @include button-constructor(transparent, $default-color)
+        border: $default-color
+
+        &, *
+            color: $text-color
+
+        &:hover, &:visited, &:active
+            &, *
+                color: $text-color
+
+    &--basic
+        @include button-constructor(transparent, transparent)
+        padding: 0
+
+        &, *
+            color: $default-color
+
+        &:hover
+            text-decoration: none
+
+            &,*
+                color: $default-color--dark
+
+    &--rounded
+        min-width: 36px
+        min-height: 36px
+        width: 36px
+        height: 36px
+        padding: 6px
+        border-radius: 100%
+
+    // --- Size Button
+    &--small
+        padding: 8px
+        font-size: $text
+
+    &--large
+        padding: 16px 32px
+        font-size: $text-lg
+        border-radius: $border-radius-md
+    // ------------------------------------------------------------------------------
+
+    &[disabled], &.disabled
+        background-color: $button-disabled-background
+        cursor: not-allowed
+        pointer-events: none
+        border-color: $button-disabled-text
+
+        &, *
+            color: $button-disabled-text
+
+        &:hover
+            background-color: $button-disabled-background
+
+            &, *
+                color: $button-disabled-text

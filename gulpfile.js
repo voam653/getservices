@@ -32,7 +32,7 @@ function sassCompile() {
 }
 
 function jsCompile() {
-  return src(['./src/client/app/**/*.js', './src/client/*.js'])
+  return src(['./src/client/app/**/*.js', './src/client/app/**/**/*.js', './src/client/*.js'])
     .pipe(concat('_bundle.js'))
     .pipe(uglify())
     .pipe(dest('./src/client/dist/js'))
@@ -47,6 +47,7 @@ function fontsCompile() {
 
 function changeListener() {
   const watcher = watch([
+    './src/client/app/views/**/*.sass',
     './src/client/**/*.sass',
     './src/client/**/*.scss',
     './src/**/*.html'

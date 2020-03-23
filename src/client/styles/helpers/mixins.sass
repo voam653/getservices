@@ -18,3 +18,12 @@
     @content
   &::-webkit-input-placeholder
     @content
+
+@mixin gradient-color($first-color, $second-color)
+  background-color: $first-color
+  background: -moz-linear-gradient(top, $first-color 0%, $second-color 100%)
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, $first-color), color-stop(100%, $second-color))
+  background: -webkit-linear-gradient(top, $first-color 0%, $second-color 100%)
+  background: -o-linear-gradient(top, $first-color 0%, $second-color 100%)
+  background: -ms-linear-gradient(top, $first-color 0%, $second-color 100%)
+  background: linear-gradient(to bottom, $first-color 0%, $second-color 100%)

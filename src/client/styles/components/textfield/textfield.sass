@@ -1,0 +1,33 @@
+input, textarea, select
+    border-radius: $border-radius
+    background-color: $white-color
+
+    @include input-placeholder
+        font-size: $spacing-16
+        font-weight: $font-weight--light
+
+    @extend .gs-textfield
+
+.gs-textfield
+    width: 100%
+    height: $spacing-36
+    max-width: 100%
+    font-size: $spacing-16
+    padding: $spacing-8
+    border-radius: $border-radius
+    line-height: 1
+    border:  $border
+    font-weight: $font-weight--light
+    display: inline-flex
+    align-items: center
+    text-overflow: ellipsis
+
+    &::placeholder
+        opacity: 0.5
+
+    &:focus
+        border-color: $border-color--dark
+
+    &.m-textarea
+        height: auto
+        line-height: 1.3
