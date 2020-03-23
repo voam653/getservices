@@ -17,7 +17,7 @@ Feito em **VanillaJs** acompanhado das seguintes tecnologias - sendo essas aplic
 
 Certifique-se de que tem o [Node](https://nodejs.org/en/) instalado em sua máquina, feito isto, realize o download ou a clonagem do repositório.
 Vá até o terminal e entre no mesmo diretório do repositório e execute o seguinte comando para baixar as dependências: `npm install` seguido dos comandos:
-`npm run build` para buildar o projeto e gerar arquivos estáticos no diretório dist (arquivos esses que serão consumidos pelo html) e para subir aplicaão do client execute `npm run start`.
+`npm run build` para buildar o projeto e gerar arquivos estáticos no diretório dist (arquivos esses que serão consumidos pelo html) e para subir aplicação do client execute `npm run start`.
 
 A aplicação irá abrir uma nova aba no browser, caso o não fizer, acesse [http://localhost:3000/](http://localhost:3000/)
 
