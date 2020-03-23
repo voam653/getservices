@@ -23,6 +23,8 @@ A aplicação irá abrir uma nova aba no browser, caso o não fizer, acesse [htt
 
 Você deverá também subir o servidor Node, para isso, abra outro terminal separadamente e execute o comando: `npm run server`
 
+O servidor vai subir na porta 8080, para isso, você pode acessar [http://localhost:8080/](http://localhost:8080/)
+
 ## Tests
 
 Infelizmente, me perdi ao configurar os testes para esse projeto, mas caso queiram ver um projeto que desenvolvi recentemente com testes, segue o [Projeto: NorrisJokes](https://github.com/gulpjs/gulp)
